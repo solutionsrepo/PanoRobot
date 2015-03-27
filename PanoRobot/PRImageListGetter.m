@@ -20,7 +20,7 @@ static const CLLocationDistance defaultRegionSizeInMeters = 3000;
     self = [super init];
     if (self) {
         _timer =
-        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -31,6 +31,10 @@ static const CLLocationDistance defaultRegionSizeInMeters = 3000;
 }
 
 - (void)timerTick {
+    if (_task) {
+        return;
+    }
+    
     if (![_locationBuffer isEqual:_location.value] || ![_imagesCountBuffer isEqualToNumber:_imagesCount.value]) {
         _imagesCountBuffer = _imagesCount.value;
         _locationBuffer = _location.value;
@@ -70,6 +74,7 @@ static const CLLocationDistance defaultRegionSizeInMeters = 3000;
      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
          if (error) {
              handleError(error);
+             _task = nil;
              return;
          }
          
@@ -87,12 +92,15 @@ static const CLLocationDistance defaultRegionSizeInMeters = 3000;
          } else {
              handleError(e);
          }
+         
+         _task = nil;
     }];
     [_task resume];
 }
 
 - (void)stopTask {
     [_task cancel];
+    _task = nil;
 }
 
 @end

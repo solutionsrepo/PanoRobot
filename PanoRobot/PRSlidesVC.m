@@ -29,9 +29,9 @@
     [super viewWillAppear:animated];
     
     _timer =
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
     
-    [self reload];
+    [self fullReload];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -75,6 +75,13 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     }];
 }
 
+- (void)fullReload {
+    if (_imageListBuffer != _imageList.value) {
+        _imageListBuffer = _imageList.value;
+        [self reload];
+    }
+}
+
 //func scrollToSelectedItem() {
 //    self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: data.selectedItemIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
 //}
@@ -92,11 +99,7 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 
 - (void)timerTick {
     
-    
-    if (_imageListBuffer != _imageList.value) {
-        _imageListBuffer = _imageList.value;
-        [self reload];
-    }
+    [self fullReload];
 
 }
 
