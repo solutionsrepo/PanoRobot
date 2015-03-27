@@ -12,10 +12,7 @@
     NSTimer * _switchSlideTimer;
     
     NSArray * _imageListBuffer;
-    NSNumber * _showingIndexBuffer;
-    
 }
-
 
 #pragma mark - init/deinit
 
@@ -26,13 +23,23 @@
     _collectionView.pagingEnabled = YES;
 }
 
+- (void)createTimer {
+    [_timer invalidate];
+    _timer =
+    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
+}
+
+- (void)createSwitchSlideTimer {
+    [_switchSlideTimer invalidate];
+    _switchSlideTimer =
+    [NSTimer scheduledTimerWithTimeInterval:_duration.value target:self selector:@selector(switchSlideTick) userInfo:nil repeats:YES];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    _timer =
-    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
-    _switchSlideTimer =
-    [NSTimer scheduledTimerWithTimeInterval:_duration.value target:self selector:@selector(switchSlideTick) userInfo:nil repeats:YES];
+    [self createTimer];
+    [self createSwitchSlideTimer];
     
     [self fullReload];
 }
@@ -46,13 +53,6 @@
 
 #pragma mark -
 
-//override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-//    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-//    
-//    collectionView.collectionViewLayout.invalidateLayout()
-//    
-//    reload()
-//}
 - (void)
 viewWillTransitionToSize:(CGSize)size
 withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -63,13 +63,6 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     [self reload];
 }
 
-//func reload() {
-//    UIView.animateWithDuration(0, animations: {
-//    }, completion: { _ in
-//        self.collectionView.reloadData()
-//        self.scrollToSelectedItem()
-//    })
-//}
 - (void)reload {
     __typeof__(self) __weak weakSelf = self;
     [UIView animateWithDuration:0 animations:^{
@@ -83,16 +76,11 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     if (_imageListBuffer != _imageList.value) {
         NSInteger index = 0;
         _showingIndex.value = @(index);
-        _showingIndexBuffer = @(index);
         
         _imageListBuffer = _imageList.value;
         [self reload];
     }
 }
-
-//func scrollToSelectedItem() {
-//    self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: data.selectedItemIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
-//}
 
 - (void)scrollToItem:(NSInteger)index {
     [_collectionView
@@ -100,12 +88,11 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
      atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
      animated:NO];
     _showingIndex.value = @(index);
-    _showingIndexBuffer = @(index);
 }
 
 - (void)scrollToSelectedItem {
-    if (_showingIndexBuffer) {
-        [self scrollToItem:[_showingIndexBuffer integerValue]];
+    if (_showingIndex.value) {
+        [self scrollToItem:[_showingIndex.value integerValue]];
     }
 }
 
@@ -118,52 +105,49 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 }
 
 - (NSInteger)nextSlideIndex {
-    assert(_showingIndexBuffer);
+    assert(_showingIndex.value);
     assert(_imageListBuffer);
     
-    return ([_showingIndexBuffer integerValue] + 1) % [_imageListBuffer count];
+    return ([_showingIndex.value integerValue] + 1) % [_imageListBuffer count];
 }
 
 - (void)switchSlideTick {
-    if (!_showingIndexBuffer || !_imageListBuffer) {
+    if (!_showingIndex.value || !_imageListBuffer) {
         return;
     }
     
+//    float animationDuration = MIN(2.0f, _duration.value);
+    
     [self scrollToItem:[self nextSlideIndex]];
+//    //fade in
+//    [UIView animateWithDuration:animationDuration animations:^{
+//        
+//        [_collectionView setAlpha:0.0f];
+//        
+//    } completion:^(BOOL finished) {
+//        
+//        [self scrollToItem:[self nextSlideIndex]];
+//        
+//        //fade out
+//        [UIView animateWithDuration:animationDuration animations:^{
+//            
+//            [_collectionView setAlpha:1.0f];
+//            
+//        } completion:nil];
+//        
+//    }];
+    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        [self scrollToItem:[self nextSlideIndex]];
+//    } completion:^(BOOL finished) {
+//    }];
 }
 
 #pragma mark - collection view data
 
-
-//func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//    return data.items.count;
-//}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [_imageListBuffer count];
 }
-
-//func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//    
-//    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("detailsCell", forIndexPath: indexPath) as! NewsItemDetailsCell
-//    
-//    let item = data.items[indexPath.row]
-//    let likeState = data.likeStatesMap[item.id]
-//    
-//    cell.setItem(item)
-//    cell.setLikeState(likeCount: item.like_count, likeState: likeState)
-//    
-//    cell.scrollContentToTop()
-//    
-//    if let details = data.detailsMap[item.id] {
-//        cell.setDetails(details)
-//    } else {
-//        cell.clearDetails()
-//        self.dataModel.requestNewsItemDetails(item.id)
-//    }
-//    
-//    return cell
-//}
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -177,10 +161,6 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     return cell;
 }
 
-//func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//    return CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-//}
-
 - (CGSize)
 collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
@@ -188,15 +168,10 @@ sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
-//func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-//    data.selectedItemIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
-//    checkCurrentPage()
-//}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSNumber * index = @((NSInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width));
     _showingIndex.value = index;
-    _showingIndexBuffer = index;
+    [self createSwitchSlideTimer];
 }
 
 @end
