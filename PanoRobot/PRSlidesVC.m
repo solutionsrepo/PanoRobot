@@ -9,6 +9,7 @@
 
 @implementation PRSlidesVC {
     NSTimer * _timer;
+    NSTimer * _switchSlideTimer;
     
     NSArray * _imageListBuffer;
     NSNumber * _showingIndexBuffer;
@@ -30,6 +31,8 @@
     
     _timer =
     [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(timerTick) userInfo:nil repeats:YES];
+    _switchSlideTimer =
+    [NSTimer scheduledTimerWithTimeInterval:_duration.value target:self selector:@selector(switchSlideTick) userInfo:nil repeats:YES];
     
     [self fullReload];
 }
@@ -38,6 +41,7 @@
     [super viewWillDisappear:animated];
     
     [_timer invalidate];
+    [_switchSlideTimer invalidate];
 }
 
 #pragma mark -
@@ -77,6 +81,10 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 
 - (void)fullReload {
     if (_imageListBuffer != _imageList.value) {
+        NSInteger index = 0;
+        _showingIndex.value = @(index);
+        _showingIndexBuffer = @(index);
+        
         _imageListBuffer = _imageList.value;
         [self reload];
     }
@@ -86,12 +94,18 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 //    self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: data.selectedItemIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
 //}
 
+- (void)scrollToItem:(NSInteger)index {
+    [_collectionView
+     scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
+     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+     animated:NO];
+    _showingIndex.value = @(index);
+    _showingIndexBuffer = @(index);
+}
+
 - (void)scrollToSelectedItem {
     if (_showingIndexBuffer) {
-        [_collectionView
-         scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:[_showingIndexBuffer integerValue] inSection:0]
-         atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-         animated:NO];
+        [self scrollToItem:[_showingIndexBuffer integerValue]];
     }
 }
 
@@ -101,6 +115,21 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     
     [self fullReload];
 
+}
+
+- (NSInteger)nextSlideIndex {
+    assert(_showingIndexBuffer);
+    assert(_imageListBuffer);
+    
+    return ([_showingIndexBuffer integerValue] + 1) % [_imageListBuffer count];
+}
+
+- (void)switchSlideTick {
+    if (!_showingIndexBuffer || !_imageListBuffer) {
+        return;
+    }
+    
+    [self scrollToItem:[self nextSlideIndex]];
 }
 
 #pragma mark - collection view data
@@ -165,8 +194,9 @@ sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 //}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    _showingIndex.value = @((NSInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width));
-    _showingIndexBuffer = _showingIndex.value;
+    NSNumber * index = @((NSInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width));
+    _showingIndex.value = index;
+    _showingIndexBuffer = index;
 }
 
 @end

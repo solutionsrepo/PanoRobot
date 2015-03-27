@@ -157,6 +157,7 @@ static const NSInteger maxImagesCount = 100;
         vc.imageList = _imageList;
         vc.imageStorage = _imageStorage;
         vc.showingIndex = _showingIndex;
+        vc.duration = _duration;
 //    }
 }
 
