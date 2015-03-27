@@ -11,6 +11,8 @@
 @property (strong, nonatomic) NSArray/*NSNumber*/ * queueOrderedIndicies;
 @property (weak, nonatomic) ThreadSafeMutableSet * passedIndicies;
 
+@property (weak, nonatomic) PRImageStorage * imageStorage;
+
 - (void)start;
 - (void)stop;
 

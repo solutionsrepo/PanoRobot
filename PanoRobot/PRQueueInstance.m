@@ -16,29 +16,30 @@
         NSDictionary * item = _imageItems[ [index integerValue] ];
         NSURL * remoteFileURL = [NSURL URLWithString:item[@"photo_file_url"]];
         
-        __typeof__(self) __weak weakSelf = self;
-        asyncToSync(^(SuccessBlock success, FailureBlock failure) {
-            weakSelf.task =
-            [[NSURLSession sharedSession]
-             downloadTaskWithURL:remoteFileURL
-             completionHandler:^(NSURL * downloadedFileURL, NSURLResponse *response, NSError *error) {
-                 if (error) {
-                     // handleError(error);
-                 } else {
-                     NSLog(@"add %@ to storage", downloadedFileURL);
-                     // [_imageStorage addFileURL:downloadedFileURL forURL:remoteFileURL];
-                 }
-                 
-                 [_passedIndicies addObject:index];
-                 
-                 if (error) {
-                     failure(error);
-                 } else {
-                     success(downloadedFileURL);
-                 }
-             }];
-            [weakSelf.task resume];
-        })();
+        if (![_imageStorage getLocalUrlByRemoteUrl:remoteFileURL]) {
+            __typeof__(self) __weak weakSelf = self;
+            NSURL * downloadedFileURL =
+            asyncToSync(^(SuccessBlock success, FailureBlock failure) {
+                weakSelf.task =
+                [[NSURLSession sharedSession]
+                 downloadTaskWithURL:remoteFileURL
+                 completionHandler:^(NSURL * downloadedFileURL, NSURLResponse *response, NSError *error) {
+                     if (!error) {
+                         success(downloadedFileURL);
+                     } else {
+                         failure(error);
+                     }
+                 }];
+                [weakSelf.task resume];
+            })();
+            
+            if (downloadedFileURL) {
+                [_imageStorage saveFileWithLocalUrl:downloadedFileURL forUrl:remoteFileURL];
+            }
+        }
+        
+        [_passedIndicies addObject:index];
+        
         
         if (_stopped) {
             break;

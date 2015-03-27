@@ -58,6 +58,7 @@ static NSArray * circularFilteredOrderedIndicies(NSInteger startIndex, NSInteger
 
 - (void)createNewQueueInstance:(NSArray *)queueOrderedIndicies {
     PRQueueInstance * instance = [[PRQueueInstance alloc] init];
+    instance.imageStorage = _imageStorage;
     instance.imageItems = _imageList.value;
     instance.passedIndicies = _passedIndicies;
     instance.queueOrderedIndicies = queueOrderedIndicies;

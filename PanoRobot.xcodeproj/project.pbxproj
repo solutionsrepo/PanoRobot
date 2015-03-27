@@ -19,6 +19,8 @@
 		7F207E031AC1A57100D2994A /* PRShowingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E021AC1A57100D2994A /* PRShowingIndex.m */; };
 		7F207E051AC1A8C700D2994A /* AsyncToSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E041AC1A8C700D2994A /* AsyncToSync.m */; };
 		7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */; };
+		7F54C2AC1AC455DF00CDD4B4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */; };
+		7F54C2AE1AC45A2400CDD4B4 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54C2AD1AC45A2400CDD4B4 /* libc++.dylib */; };
 		7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */; };
 		7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1981ABE090200920A8E /* PRDuration.m */; };
 		7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF19B1ABE094300920A8E /* PRLocation.m */; };
@@ -63,6 +65,8 @@
 		7F207E061AC1A95A00D2994A /* AsyncToSync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncToSync.h; sourceTree = "<group>"; };
 		7F54C2A71AC447F900CDD4B4 /* ThreadSafeMutableSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeMutableSet.h; sourceTree = "<group>"; };
 		7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeMutableSet.m; sourceTree = "<group>"; };
+		7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = realm/Realm.framework; sourceTree = "<group>"; };
+		7F54C2AD1AC45A2400CDD4B4 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		7FEAF1941ABE08AD00920A8E /* PRImagesCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImagesCount.h; sourceTree = "<group>"; };
 		7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImagesCount.m; sourceTree = "<group>"; };
 		7FEAF1971ABE090200920A8E /* PRDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDuration.h; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F54C2AE1AC45A2400CDD4B4 /* libc++.dylib in Frameworks */,
+				7F54C2AC1AC455DF00CDD4B4 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +108,8 @@
 		7F035C191ABC481300C21891 = {
 			isa = PBXGroup;
 			children = (
+				7F54C2AD1AC45A2400CDD4B4 /* libc++.dylib */,
+				7F54C2AA1AC455D200CDD4B4 /* Realm */,
 				7F035C241ABC481300C21891 /* PanoRobot */,
 				7F035C411ABC481300C21891 /* PanoRobotTests */,
 				7F035C231ABC481300C21891 /* Products */,
@@ -167,6 +175,14 @@
 				7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		7F54C2AA1AC455D200CDD4B4 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		7FEAF1AC1ABE0D8200920A8E /* Settings */ = {
@@ -458,6 +474,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/realm",
+				);
 				INFOPLIST_FILE = PanoRobot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +488,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/realm",
+				);
 				INFOPLIST_FILE = PanoRobot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
