@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F035C281ABC481300C21891 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C271ABC481300C21891 /* main.m */; };
+		7F035C2B1ABC481300C21891 /* PRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C2A1ABC481300C21891 /* PRAppDelegate.m */; };
+		7F035C2E1ABC481300C21891 /* PRSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C2D1ABC481300C21891 /* PRSettingsVC.m */; };
+		7F035C311ABC481300C21891 /* PRSlidesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C301ABC481300C21891 /* PRSlidesVC.m */; };
+		7F035C341ABC481300C21891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C321ABC481300C21891 /* Main.storyboard */; };
+		7F035C361ABC481300C21891 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C351ABC481300C21891 /* Images.xcassets */; };
+		7F035C391ABC481300C21891 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C371ABC481300C21891 /* LaunchScreen.xib */; };
+		7F035C451ABC481300C21891 /* PanoRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C441ABC481300C21891 /* PanoRobotTests.m */; };
+		7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */; };
+		7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1981ABE090200920A8E /* PRDuration.m */; };
+		7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF19B1ABE094300920A8E /* PRLocation.m */; };
+		7FEAF19F1ABE095F00920A8E /* PRImageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF19E1ABE095F00920A8E /* PRImageList.m */; };
+		7FEAF1A21ABE097500920A8E /* PRImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1A11ABE097500920A8E /* PRImageStorage.m */; };
+		7FEAF1A51ABE098D00920A8E /* PRQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1A41ABE098D00920A8E /* PRQueue.m */; };
+		7FEAF1A81ABE09A300920A8E /* PRImageListGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1A71ABE09A300920A8E /* PRImageListGetter.m */; };
+		7FEAF1AB1ABE09D300920A8E /* PRLocationGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1AA1ABE09D300920A8E /* PRLocationGetter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F035C3F1ABC481300C21891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F035C1A1ABC481300C21891 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F035C211ABC481300C21891;
+			remoteInfo = PanoRobot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F035C221ABC481300C21891 /* PanoRobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoRobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F035C261ABC481300C21891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F035C271ABC481300C21891 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F035C291ABC481300C21891 /* PRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRAppDelegate.h; sourceTree = "<group>"; };
+		7F035C2A1ABC481300C21891 /* PRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRAppDelegate.m; sourceTree = "<group>"; };
+		7F035C2C1ABC481300C21891 /* PRSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRSettingsVC.h; sourceTree = "<group>"; };
+		7F035C2D1ABC481300C21891 /* PRSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRSettingsVC.m; sourceTree = "<group>"; };
+		7F035C2F1ABC481300C21891 /* PRSlidesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRSlidesVC.h; sourceTree = "<group>"; };
+		7F035C301ABC481300C21891 /* PRSlidesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRSlidesVC.m; sourceTree = "<group>"; };
+		7F035C331ABC481300C21891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F035C351ABC481300C21891 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7F035C381ABC481300C21891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7F035C3E1ABC481300C21891 /* PanoRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanoRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F035C431ABC481300C21891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F035C441ABC481300C21891 /* PanoRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanoRobotTests.m; sourceTree = "<group>"; };
+		7FEAF1941ABE08AD00920A8E /* PRImagesCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImagesCount.h; sourceTree = "<group>"; };
+		7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImagesCount.m; sourceTree = "<group>"; };
+		7FEAF1971ABE090200920A8E /* PRDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDuration.h; sourceTree = "<group>"; };
+		7FEAF1981ABE090200920A8E /* PRDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRDuration.m; sourceTree = "<group>"; };
+		7FEAF19A1ABE094300920A8E /* PRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRLocation.h; sourceTree = "<group>"; };
+		7FEAF19B1ABE094300920A8E /* PRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRLocation.m; sourceTree = "<group>"; };
+		7FEAF19D1ABE095F00920A8E /* PRImageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImageList.h; sourceTree = "<group>"; };
+		7FEAF19E1ABE095F00920A8E /* PRImageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImageList.m; sourceTree = "<group>"; };
+		7FEAF1A01ABE097500920A8E /* PRImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImageStorage.h; sourceTree = "<group>"; };
+		7FEAF1A11ABE097500920A8E /* PRImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImageStorage.m; sourceTree = "<group>"; };
+		7FEAF1A31ABE098D00920A8E /* PRQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRQueue.h; sourceTree = "<group>"; };
+		7FEAF1A41ABE098D00920A8E /* PRQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRQueue.m; sourceTree = "<group>"; };
+		7FEAF1A61ABE09A300920A8E /* PRImageListGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImageListGetter.h; sourceTree = "<group>"; };
+		7FEAF1A71ABE09A300920A8E /* PRImageListGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImageListGetter.m; sourceTree = "<group>"; };
+		7FEAF1A91ABE09D300920A8E /* PRLocationGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRLocationGetter.h; sourceTree = "<group>"; };
+		7FEAF1AA1ABE09D300920A8E /* PRLocationGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRLocationGetter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F035C1F1ABC481300C21891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F035C3B1ABC481300C21891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F035C191ABC481300C21891 = {
+			isa = PBXGroup;
+			children = (
+				7F035C241ABC481300C21891 /* PanoRobot */,
+				7F035C411ABC481300C21891 /* PanoRobotTests */,
+				7F035C231ABC481300C21891 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F035C231ABC481300C21891 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F035C221ABC481300C21891 /* PanoRobot.app */,
+				7F035C3E1ABC481300C21891 /* PanoRobotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F035C241ABC481300C21891 /* PanoRobot */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAF1AC1ABE0D8200920A8E /* Settings */,
+				7FEAF1AD1ABE0D9A00920A8E /* Data */,
+				7FEAF1AE1ABE0DB500920A8E /* ActiveObjects */,
+				7F035C321ABC481300C21891 /* Main.storyboard */,
+				7F035C351ABC481300C21891 /* Images.xcassets */,
+				7F035C371ABC481300C21891 /* LaunchScreen.xib */,
+				7F035C251ABC481300C21891 /* Supporting Files */,
+			);
+			path = PanoRobot;
+			sourceTree = "<group>";
+		};
+		7F035C251ABC481300C21891 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F035C261ABC481300C21891 /* Info.plist */,
+				7F035C271ABC481300C21891 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F035C411ABC481300C21891 /* PanoRobotTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F035C441ABC481300C21891 /* PanoRobotTests.m */,
+				7F035C421ABC481300C21891 /* Supporting Files */,
+			);
+			path = PanoRobotTests;
+			sourceTree = "<group>";
+		};
+		7F035C421ABC481300C21891 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F035C431ABC481300C21891 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FEAF1AC1ABE0D8200920A8E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAF1941ABE08AD00920A8E /* PRImagesCount.h */,
+				7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */,
+				7FEAF1971ABE090200920A8E /* PRDuration.h */,
+				7FEAF1981ABE090200920A8E /* PRDuration.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		7FEAF1AD1ABE0D9A00920A8E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAF19A1ABE094300920A8E /* PRLocation.h */,
+				7FEAF19B1ABE094300920A8E /* PRLocation.m */,
+				7FEAF19D1ABE095F00920A8E /* PRImageList.h */,
+				7FEAF19E1ABE095F00920A8E /* PRImageList.m */,
+				7FEAF1A01ABE097500920A8E /* PRImageStorage.h */,
+				7FEAF1A11ABE097500920A8E /* PRImageStorage.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		7FEAF1AE1ABE0DB500920A8E /* ActiveObjects */ = {
+			isa = PBXGroup;
+			children = (
+				7FEAF1A31ABE098D00920A8E /* PRQueue.h */,
+				7FEAF1A41ABE098D00920A8E /* PRQueue.m */,
+				7FEAF1A61ABE09A300920A8E /* PRImageListGetter.h */,
+				7FEAF1A71ABE09A300920A8E /* PRImageListGetter.m */,
+				7FEAF1A91ABE09D300920A8E /* PRLocationGetter.h */,
+				7FEAF1AA1ABE09D300920A8E /* PRLocationGetter.m */,
+				7F035C2C1ABC481300C21891 /* PRSettingsVC.h */,
+				7F035C2D1ABC481300C21891 /* PRSettingsVC.m */,
+				7F035C2F1ABC481300C21891 /* PRSlidesVC.h */,
+				7F035C301ABC481300C21891 /* PRSlidesVC.m */,
+				7F035C291ABC481300C21891 /* PRAppDelegate.h */,
+				7F035C2A1ABC481300C21891 /* PRAppDelegate.m */,
+			);
+			name = ActiveObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F035C211ABC481300C21891 /* PanoRobot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F035C481ABC481300C21891 /* Build configuration list for PBXNativeTarget "PanoRobot" */;
+			buildPhases = (
+				7F035C1E1ABC481300C21891 /* Sources */,
+				7F035C1F1ABC481300C21891 /* Frameworks */,
+				7F035C201ABC481300C21891 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanoRobot;
+			productName = PanoRobot;
+			productReference = 7F035C221ABC481300C21891 /* PanoRobot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F035C3D1ABC481300C21891 /* PanoRobotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F035C4B1ABC481300C21891 /* Build configuration list for PBXNativeTarget "PanoRobotTests" */;
+			buildPhases = (
+				7F035C3A1ABC481300C21891 /* Sources */,
+				7F035C3B1ABC481300C21891 /* Frameworks */,
+				7F035C3C1ABC481300C21891 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F035C401ABC481300C21891 /* PBXTargetDependency */,
+			);
+			name = PanoRobotTests;
+			productName = PanoRobotTests;
+			productReference = 7F035C3E1ABC481300C21891 /* PanoRobotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F035C1A1ABC481300C21891 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				TargetAttributes = {
+					7F035C211ABC481300C21891 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					7F035C3D1ABC481300C21891 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 7F035C211ABC481300C21891;
+					};
+				};
+			};
+			buildConfigurationList = 7F035C1D1ABC481300C21891 /* Build configuration list for PBXProject "PanoRobot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F035C191ABC481300C21891;
+			productRefGroup = 7F035C231ABC481300C21891 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F035C211ABC481300C21891 /* PanoRobot */,
+				7F035C3D1ABC481300C21891 /* PanoRobotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F035C201ABC481300C21891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F035C341ABC481300C21891 /* Main.storyboard in Resources */,
+				7F035C391ABC481300C21891 /* LaunchScreen.xib in Resources */,
+				7F035C361ABC481300C21891 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F035C3C1ABC481300C21891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F035C1E1ABC481300C21891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F035C2B1ABC481300C21891 /* PRAppDelegate.m in Sources */,
+				7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */,
+				7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */,
+				7FEAF1A21ABE097500920A8E /* PRImageStorage.m in Sources */,
+				7F035C2E1ABC481300C21891 /* PRSettingsVC.m in Sources */,
+				7FEAF1A51ABE098D00920A8E /* PRQueue.m in Sources */,
+				7F035C281ABC481300C21891 /* main.m in Sources */,
+				7FEAF19F1ABE095F00920A8E /* PRImageList.m in Sources */,
+				7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */,
+				7FEAF1A81ABE09A300920A8E /* PRImageListGetter.m in Sources */,
+				7F035C311ABC481300C21891 /* PRSlidesVC.m in Sources */,
+				7FEAF1AB1ABE09D300920A8E /* PRLocationGetter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F035C3A1ABC481300C21891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F035C451ABC481300C21891 /* PanoRobotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F035C401ABC481300C21891 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F035C211ABC481300C21891 /* PanoRobot */;
+			targetProxy = 7F035C3F1ABC481300C21891 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F035C321ABC481300C21891 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F035C331ABC481300C21891 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F035C371ABC481300C21891 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F035C381ABC481300C21891 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F035C461ABC481300C21891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F035C471ABC481300C21891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F035C491ABC481300C21891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanoRobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F035C4A1ABC481300C21891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanoRobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7F035C4C1ABC481300C21891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PanoRobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanoRobot.app/PanoRobot";
+			};
+			name = Debug;
+		};
+		7F035C4D1ABC481300C21891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PanoRobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanoRobot.app/PanoRobot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F035C1D1ABC481300C21891 /* Build configuration list for PBXProject "PanoRobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F035C461ABC481300C21891 /* Debug */,
+				7F035C471ABC481300C21891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F035C481ABC481300C21891 /* Build configuration list for PBXNativeTarget "PanoRobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F035C491ABC481300C21891 /* Debug */,
+				7F035C4A1ABC481300C21891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F035C4B1ABC481300C21891 /* Build configuration list for PBXNativeTarget "PanoRobotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F035C4C1ABC481300C21891 /* Debug */,
+				7F035C4D1ABC481300C21891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F035C1A1ABC481300C21891 /* Project object */;
+}
