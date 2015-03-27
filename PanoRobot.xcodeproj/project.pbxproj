@@ -21,6 +21,7 @@
 		7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */; };
 		7F54C2AC1AC455DF00CDD4B4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */; };
 		7F54C2AE1AC45A2400CDD4B4 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54C2AD1AC45A2400CDD4B4 /* libc++.dylib */; };
+		7F54C2B21AC4625500CDD4B4 /* PRSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F54C2B11AC4625500CDD4B4 /* PRSlideCell.m */; };
 		7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */; };
 		7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1981ABE090200920A8E /* PRDuration.m */; };
 		7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF19B1ABE094300920A8E /* PRLocation.m */; };
@@ -67,6 +68,8 @@
 		7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeMutableSet.m; sourceTree = "<group>"; };
 		7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = realm/Realm.framework; sourceTree = "<group>"; };
 		7F54C2AD1AC45A2400CDD4B4 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7F54C2B01AC4625500CDD4B4 /* PRSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSlideCell.h; sourceTree = "<group>"; };
+		7F54C2B11AC4625500CDD4B4 /* PRSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSlideCell.m; sourceTree = "<group>"; };
 		7FEAF1941ABE08AD00920A8E /* PRImagesCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImagesCount.h; sourceTree = "<group>"; };
 		7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImagesCount.m; sourceTree = "<group>"; };
 		7FEAF1971ABE090200920A8E /* PRDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDuration.h; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				7FEAF1AC1ABE0D8200920A8E /* Settings */,
 				7FEAF1AD1ABE0D9A00920A8E /* Data */,
 				7FEAF1AE1ABE0DB500920A8E /* ActiveObjects */,
+				7F54C2AF1AC4622600CDD4B4 /* Views */,
 				7F207DFB1AC0336700D2994A /* Misc */,
 				7F035C321ABC481300C21891 /* Main.storyboard */,
 				7F035C351ABC481300C21891 /* Images.xcassets */,
@@ -183,6 +187,15 @@
 				7F54C2AB1AC455DF00CDD4B4 /* Realm.framework */,
 			);
 			name = Realm;
+			sourceTree = "<group>";
+		};
+		7F54C2AF1AC4622600CDD4B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F54C2B01AC4625500CDD4B4 /* PRSlideCell.h */,
+				7F54C2B11AC4625500CDD4B4 /* PRSlideCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7FEAF1AC1ABE0D8200920A8E /* Settings */ = {
@@ -346,6 +359,7 @@
 				7F035C311ABC481300C21891 /* PRSlidesVC.m in Sources */,
 				7FEAF1AB1ABE09D300920A8E /* PRLocationGetter.m in Sources */,
 				7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */,
+				7F54C2B21AC4625500CDD4B4 /* PRSlideCell.m in Sources */,
 				7F207E051AC1A8C700D2994A /* AsyncToSync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

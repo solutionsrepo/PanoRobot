@@ -82,7 +82,7 @@ static const CLLocationDistance defaultRegionSizeInMeters = 3000;
          
          if ([json isKindOfClass:[NSDictionary class]]) {
              NSArray * photos = json[@"photos"];
-             NSLog(@"photos: %@", photos);
+             //NSLog(@"photos: %@", photos);
              _imageList.value = photos;
          } else {
              handleError(e);

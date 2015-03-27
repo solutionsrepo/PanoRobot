@@ -66,6 +66,10 @@
     _settingsVC.imagesCount = _imagesCount;
     _settingsVC.duration = _duration;
     
+    _settingsVC.imageList = _imageList;
+    _settingsVC.imageStorage = _imageStorage;
+    _settingsVC.showingIndex = _showingIndex;
+    
     
     return YES;
 }

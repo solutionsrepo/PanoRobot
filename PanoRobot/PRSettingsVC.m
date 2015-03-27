@@ -152,9 +152,12 @@ static const NSInteger maxImagesCount = 100;
 #pragma mark - segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"startSlideshow"]) {
-        
-    }
+//    if ([[segue identifier] isEqualToString:@"startSlideshow"]) {
+        PRSlidesVC * vc = (PRSlidesVC *)[segue destinationViewController];
+        vc.imageList = _imageList;
+        vc.imageStorage = _imageStorage;
+        vc.showingIndex = _showingIndex;
+//    }
 }
 
 @end
