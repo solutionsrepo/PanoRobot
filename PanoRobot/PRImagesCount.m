@@ -6,8 +6,8 @@
 
 @implementation PRImagesCount
 
-+ (NSInteger)defaultValue {
-    return 10;
++ (NSNumber *)defaultValue {
+    return @10;
 }
 
 - (instancetype)init {

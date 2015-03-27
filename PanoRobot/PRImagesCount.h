@@ -2,6 +2,6 @@
 
 @interface PRImagesCount : NSObject
 
-@property (nonatomic) NSInteger value;
+@property (atomic) NSNumber * value;
 
 @end

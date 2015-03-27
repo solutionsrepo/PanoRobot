@@ -2,6 +2,6 @@
 
 @interface PRDuration : NSObject
 
-@property (nonatomic) float value;
+@property (atomic) float value;
 
 @end

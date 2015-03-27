@@ -82,19 +82,19 @@ static const NSInteger maxImagesCount = 100;
 #pragma mark - images count data manipulation
 
 - (NSInteger)imagesCountInBuffer {
-    return _durationBuffer;
+    return _imagesCountBuffer;
 }
 
 - (NSInteger)imagesCountValue {
-    return _duration.value;
+    return [_imagesCount.value integerValue];
 }
 
 - (void)loadImagesCount {
-    _imagesCountBuffer = _imagesCount.value;
+    _imagesCountBuffer = [_imagesCount.value integerValue];
 }
 
 - (void)saveImagesCount {
-    _imagesCount.value = _imagesCountBuffer;
+    _imagesCount.value = @(_imagesCountBuffer);
 }
 
 - (void)getImagesCountFromSlider {
@@ -122,7 +122,7 @@ static const NSInteger maxImagesCount = 100;
     [self setDurationInLabel];
 }
 
-- (IBAction)imagesCountSliderMoved:(UISlider *)slider {
+- (IBAction)imageCountSliderMoved:(UISlider *)slider {
     [self getImagesCountFromSlider];
     [self setImagesCountInLabel];
 }
@@ -141,28 +141,12 @@ static const NSInteger maxImagesCount = 100;
 
 - (void)timerTick {
     if ([self durationInBuffer] != [self durationValue]) {
-        [self saveDuration];
-        [self postNewDurationNotification];
+        [self saveImagesCount];
     }
     
-    if ([self durationInBuffer] != [self durationValue]) {
+    if ([self imagesCountInBuffer] != [self imagesCountValue]) {
         [self saveImagesCount];
-        [self postNewImagesCountNotification];
     }
-}
-
-#pragma mark - notifications senders
-
-- (void)postNewDurationNotification {
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"DurationUpdatedNotification"
-     object:nil];
-}
-
-- (void)postNewImagesCountNotification {
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"ImagesCountUpdatedNotification"
-     object:nil];
 }
 
 #pragma mark - segues

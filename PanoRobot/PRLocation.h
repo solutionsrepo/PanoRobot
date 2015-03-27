@@ -3,6 +3,6 @@
 
 @interface PRLocation : NSObject
 
-@property (strong, nonatomic) CLLocation * value;
+@property (strong, atomic) CLLocation * value;
 
 @end

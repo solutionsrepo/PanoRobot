@@ -27,12 +27,7 @@
 }
 
 - (void)updateLocation:(CLLocation *)location {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _location.value = location;
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"LocationAcquiredNotification"
-         object:nil];
-    });
+    _location.value = location;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {

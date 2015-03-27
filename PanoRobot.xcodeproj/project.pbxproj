@@ -111,6 +111,7 @@
 				7FEAF1AC1ABE0D8200920A8E /* Settings */,
 				7FEAF1AD1ABE0D9A00920A8E /* Data */,
 				7FEAF1AE1ABE0DB500920A8E /* ActiveObjects */,
+				7F207DFB1AC0336700D2994A /* Misc */,
 				7F035C321ABC481300C21891 /* Main.storyboard */,
 				7F035C351ABC481300C21891 /* Images.xcassets */,
 				7F035C371ABC481300C21891 /* LaunchScreen.xib */,
@@ -143,6 +144,13 @@
 				7F035C431ABC481300C21891 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F207DFB1AC0336700D2994A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		7FEAF1AC1ABE0D8200920A8E /* Settings */ = {

@@ -41,7 +41,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CZZ-ZS-S7z">
                                 <rect key="frame" x="14" y="125" width="572" height="31"/>
                                 <connections>
-                                    <action selector="durationSliderMoved:" destination="MiA-1b-T65" eventType="valueChanged" id="itR-KL-sdf"/>
+                                    <action selector="durationSliderMoved:" destination="MiA-1b-T65" eventType="valueChanged" id="oCZ-rO-EXn"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5 s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym8-m1-ftg">
@@ -65,7 +65,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="afC-BH-TB1">
                                 <rect key="frame" x="14" y="251" width="572" height="31"/>
                                 <connections>
-                                    <action selector="imagesCountSliderMoved:" destination="MiA-1b-T65" eventType="valueChanged" id="9zf-Sl-7Ux"/>
+                                    <action selector="imageCountSliderMoved:" destination="MiA-1b-T65" eventType="valueChanged" id="e49-Gv-8my"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uz-3q-vg4">
@@ -114,9 +114,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="durationLabel" destination="Ejy-pq-RyE" id="PHO-rG-tMi"/>
-                        <outlet property="durationSlider" destination="CZZ-ZS-S7z" id="EZ1-J9-BIh"/>
+                        <outlet property="durationSlider" destination="CZZ-ZS-S7z" id="jUl-Z8-cL8"/>
                         <outlet property="imagesLabel" destination="wmk-8s-6bt" id="cfK-gl-kLE"/>
-                        <outlet property="imagesSlider" destination="afC-BH-TB1" id="hW8-Ij-8F9"/>
+                        <outlet property="imagesSlider" destination="afC-BH-TB1" id="vYd-66-oi4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAN-28-pmB" userLabel="First Responder" sceneMemberID="firstResponder"/>
