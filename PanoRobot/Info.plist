@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>Need your location to know which photos should be downloaded.</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>Need your location to know which photos should be downloaded.</string>
 </dict>
 </plist>
