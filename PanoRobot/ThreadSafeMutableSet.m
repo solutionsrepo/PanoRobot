@@ -8,7 +8,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _lockQueue = dispatch_queue_create("ru.redmadrobot.LockQueue", nil);
+        _lockQueue = dispatch_queue_create("ru.redmadrobot.ThreadSafeMutableSetLockQueue", nil);
     }
     return self;
 }
