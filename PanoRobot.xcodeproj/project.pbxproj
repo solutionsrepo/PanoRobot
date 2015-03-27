@@ -15,6 +15,10 @@
 		7F035C361ABC481300C21891 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C351ABC481300C21891 /* Images.xcassets */; };
 		7F035C391ABC481300C21891 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C371ABC481300C21891 /* LaunchScreen.xib */; };
 		7F035C451ABC481300C21891 /* PanoRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C441ABC481300C21891 /* PanoRobotTests.m */; };
+		7F207E001AC0765100D2994A /* PRQueueInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207DFF1AC0765100D2994A /* PRQueueInstance.m */; };
+		7F207E031AC1A57100D2994A /* PRShowingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E021AC1A57100D2994A /* PRShowingIndex.m */; };
+		7F207E051AC1A8C700D2994A /* AsyncToSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E041AC1A8C700D2994A /* AsyncToSync.m */; };
+		7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */; };
 		7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */; };
 		7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF1981ABE090200920A8E /* PRDuration.m */; };
 		7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAF19B1ABE094300920A8E /* PRLocation.m */; };
@@ -51,6 +55,14 @@
 		7F035C3E1ABC481300C21891 /* PanoRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanoRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F035C431ABC481300C21891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F035C441ABC481300C21891 /* PanoRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanoRobotTests.m; sourceTree = "<group>"; };
+		7F207DFE1AC0765100D2994A /* PRQueueInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRQueueInstance.h; sourceTree = "<group>"; };
+		7F207DFF1AC0765100D2994A /* PRQueueInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRQueueInstance.m; sourceTree = "<group>"; };
+		7F207E011AC1A57100D2994A /* PRShowingIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRShowingIndex.h; sourceTree = "<group>"; };
+		7F207E021AC1A57100D2994A /* PRShowingIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRShowingIndex.m; sourceTree = "<group>"; };
+		7F207E041AC1A8C700D2994A /* AsyncToSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncToSync.m; sourceTree = "<group>"; };
+		7F207E061AC1A95A00D2994A /* AsyncToSync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncToSync.h; sourceTree = "<group>"; };
+		7F54C2A71AC447F900CDD4B4 /* ThreadSafeMutableSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeMutableSet.h; sourceTree = "<group>"; };
+		7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeMutableSet.m; sourceTree = "<group>"; };
 		7FEAF1941ABE08AD00920A8E /* PRImagesCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRImagesCount.h; sourceTree = "<group>"; };
 		7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRImagesCount.m; sourceTree = "<group>"; };
 		7FEAF1971ABE090200920A8E /* PRDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDuration.h; sourceTree = "<group>"; };
@@ -149,6 +161,10 @@
 		7F207DFB1AC0336700D2994A /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				7F207E061AC1A95A00D2994A /* AsyncToSync.h */,
+				7F207E041AC1A8C700D2994A /* AsyncToSync.m */,
+				7F54C2A71AC447F900CDD4B4 /* ThreadSafeMutableSet.h */,
+				7F54C2A81AC447F900CDD4B4 /* ThreadSafeMutableSet.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -160,6 +176,8 @@
 				7FEAF1951ABE08AD00920A8E /* PRImagesCount.m */,
 				7FEAF1971ABE090200920A8E /* PRDuration.h */,
 				7FEAF1981ABE090200920A8E /* PRDuration.m */,
+				7F207E011AC1A57100D2994A /* PRShowingIndex.h */,
+				7F207E021AC1A57100D2994A /* PRShowingIndex.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -182,6 +200,8 @@
 			children = (
 				7FEAF1A31ABE098D00920A8E /* PRQueue.h */,
 				7FEAF1A41ABE098D00920A8E /* PRQueue.m */,
+				7F207DFE1AC0765100D2994A /* PRQueueInstance.h */,
+				7F207DFF1AC0765100D2994A /* PRQueueInstance.m */,
 				7FEAF1A61ABE09A300920A8E /* PRImageListGetter.h */,
 				7FEAF1A71ABE09A300920A8E /* PRImageListGetter.m */,
 				7FEAF1A91ABE09D300920A8E /* PRLocationGetter.h */,
@@ -297,8 +317,10 @@
 			files = (
 				7F035C2B1ABC481300C21891 /* PRAppDelegate.m in Sources */,
 				7FEAF19C1ABE094300920A8E /* PRLocation.m in Sources */,
+				7F207E031AC1A57100D2994A /* PRShowingIndex.m in Sources */,
 				7FEAF1991ABE090200920A8E /* PRDuration.m in Sources */,
 				7FEAF1A21ABE097500920A8E /* PRImageStorage.m in Sources */,
+				7F207E001AC0765100D2994A /* PRQueueInstance.m in Sources */,
 				7F035C2E1ABC481300C21891 /* PRSettingsVC.m in Sources */,
 				7FEAF1A51ABE098D00920A8E /* PRQueue.m in Sources */,
 				7F035C281ABC481300C21891 /* main.m in Sources */,
@@ -307,6 +329,8 @@
 				7FEAF1A81ABE09A300920A8E /* PRImageListGetter.m in Sources */,
 				7F035C311ABC481300C21891 /* PRSlidesVC.m in Sources */,
 				7FEAF1AB1ABE09D300920A8E /* PRLocationGetter.m in Sources */,
+				7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */,
+				7F207E051AC1A8C700D2994A /* AsyncToSync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

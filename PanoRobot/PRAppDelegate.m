@@ -2,6 +2,7 @@
 
 #import "PRImagesCount.h"
 #import "PRDuration.h"
+#import "PRShowingIndex.h"
 
 #import "PRLocation.h"
 #import "PRImageList.h"
@@ -18,6 +19,7 @@
 
 @property (strong, nonatomic) PRImagesCount * imagesCount;
 @property (strong, nonatomic) PRDuration * duration;
+@property (strong, nonatomic) PRShowingIndex * showingIndex;
 
 @property (strong, nonatomic) PRLocation * location;
 @property (strong, nonatomic) PRImageList * imageList;
@@ -38,6 +40,7 @@
     
     _imagesCount = [[PRImagesCount alloc] init];
     _duration = [[PRDuration alloc] init];
+    _showingIndex = [[PRShowingIndex alloc] init];
     
     
     _location = [[PRLocation alloc] init];
@@ -48,6 +51,7 @@
     _queue = [[PRQueue alloc] init];
     _queue.imageList = _imageList;
     _queue.imageStorage = _imageStorage;
+    _queue.showingIndex = _showingIndex;
     
     _imageListGetter = [[PRImageListGetter alloc] init];
     _imageListGetter.imagesCount = _imagesCount;

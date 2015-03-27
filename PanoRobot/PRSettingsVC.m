@@ -141,7 +141,7 @@ static const NSInteger maxImagesCount = 100;
 
 - (void)timerTick {
     if ([self durationInBuffer] != [self durationValue]) {
-        [self saveImagesCount];
+        [self saveDuration];
     }
     
     if ([self imagesCountInBuffer] != [self imagesCountValue]) {
