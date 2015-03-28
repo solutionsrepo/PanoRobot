@@ -43,7 +43,7 @@ RLM_ARRAY_TYPE(RLMImageCacheEntry)
     
     dispatch_sync(_lockQueue, ^{
         RLMResults * result =
-        [RLMImageCacheEntry objectsInRealm:[[self class] realm] where:[NSString stringWithFormat:@"remoteUrl = '%@'", url]];
+        [RLMImageCacheEntry objectsInRealm:[[self class] realm] where:[NSString stringWithFormat:@"remoteUrl = '%@'", [url absoluteString]]];
         if ([result count] > 0) {
             NSString * localFileName = [(RLMImageCacheEntry *)[result firstObject] localFileName];
             localUrl = [[[self class] cacheDirectoryUrl] URLByAppendingPathComponent:localFileName];
@@ -60,19 +60,24 @@ RLM_ARRAY_TYPE(RLMImageCacheEntry)
     NSError * error;
     [[NSFileManager defaultManager] copyItemAtURL:localUrl toURL:randomFileUrl error:&error];
     
-    NSLog(@"saving file: %@", randomFileUrl);
-    
     dispatch_sync(_lockQueue, ^{
-        RLMImageCacheEntry * entry = [[RLMImageCacheEntry alloc] init];
-        
-        entry.remoteUrl = [url absoluteString];
-        entry.localFileName = [randomFileUrl lastPathComponent];
-        
         RLMRealm * r = [[self class] realm];
         
-        [r transactionWithBlock:^{
-            [r addObject:entry];
-        }];
+        RLMResults * result =
+        [RLMImageCacheEntry objectsInRealm:[[self class] realm] where:[NSString stringWithFormat:@"remoteUrl = '%@'", [url absoluteString]]];
+        
+        if ([result count] == 0) {
+            RLMImageCacheEntry * entry = [[RLMImageCacheEntry alloc] init];
+            
+            entry.remoteUrl = [url absoluteString];
+            entry.localFileName = [randomFileUrl lastPathComponent];
+            
+            NSLog(@"saving file: %@", randomFileUrl);
+            
+            [r transactionWithBlock:^{
+                [r addObject:entry];
+            }];
+        }
     });
 }
 

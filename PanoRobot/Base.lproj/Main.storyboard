@@ -108,7 +108,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="EtN-zU-X64">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="Uib-LV-sk5">
                             <connections>
-                                <segue destination="g7G-Vw-MFJ" kind="show" id="rDt-bx-xTd"/>
+                                <segue destination="g7G-Vw-MFJ" kind="show" identifier="startSlideshow" id="rDt-bx-xTd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
