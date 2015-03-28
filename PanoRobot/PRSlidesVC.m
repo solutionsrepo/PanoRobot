@@ -149,7 +149,11 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     
     [self scrollToItem:[self nextSlideIndex]];
     
-    [UIView animateWithDuration:animationDuration animations:^{
+    [UIView
+     animateWithDuration:animationDuration
+     delay:0
+     options:UIViewAnimationOptionAllowUserInteraction
+     animations:^{
         _fadingView.alpha = 0.0f;
     } completion:^(BOOL finished) {
     }];
