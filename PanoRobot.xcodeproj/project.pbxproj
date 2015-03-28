@@ -15,6 +15,7 @@
 		7F035C361ABC481300C21891 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C351ABC481300C21891 /* Images.xcassets */; };
 		7F035C391ABC481300C21891 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F035C371ABC481300C21891 /* LaunchScreen.xib */; };
 		7F035C451ABC481300C21891 /* PanoRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F035C441ABC481300C21891 /* PanoRobotTests.m */; };
+		7F1818C61AC6CE9E00466BE3 /* PRFadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1818C51AC6CE9E00466BE3 /* PRFadingView.m */; };
 		7F207E001AC0765100D2994A /* PRQueueInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207DFF1AC0765100D2994A /* PRQueueInstance.m */; };
 		7F207E031AC1A57100D2994A /* PRShowingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E021AC1A57100D2994A /* PRShowingIndex.m */; };
 		7F207E051AC1A8C700D2994A /* AsyncToSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F207E041AC1A8C700D2994A /* AsyncToSync.m */; };
@@ -58,6 +59,8 @@
 		7F035C3E1ABC481300C21891 /* PanoRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanoRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F035C431ABC481300C21891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F035C441ABC481300C21891 /* PanoRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanoRobotTests.m; sourceTree = "<group>"; };
+		7F1818C41AC6CE9E00466BE3 /* PRFadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFadingView.h; sourceTree = "<group>"; };
+		7F1818C51AC6CE9E00466BE3 /* PRFadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFadingView.m; sourceTree = "<group>"; };
 		7F207DFE1AC0765100D2994A /* PRQueueInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRQueueInstance.h; sourceTree = "<group>"; };
 		7F207DFF1AC0765100D2994A /* PRQueueInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRQueueInstance.m; sourceTree = "<group>"; };
 		7F207E011AC1A57100D2994A /* PRShowingIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRShowingIndex.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 			children = (
 				7F54C2B01AC4625500CDD4B4 /* PRSlideCell.h */,
 				7F54C2B11AC4625500CDD4B4 /* PRSlideCell.m */,
+				7F1818C41AC6CE9E00466BE3 /* PRFadingView.h */,
+				7F1818C51AC6CE9E00466BE3 /* PRFadingView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				7FEAF1961ABE08AD00920A8E /* PRImagesCount.m in Sources */,
 				7FEAF1A81ABE09A300920A8E /* PRImageListGetter.m in Sources */,
 				7F035C311ABC481300C21891 /* PRSlidesVC.m in Sources */,
+				7F1818C61AC6CE9E00466BE3 /* PRFadingView.m in Sources */,
 				7FEAF1AB1ABE09D300920A8E /* PRLocationGetter.m in Sources */,
 				7F54C2A91AC447F900CDD4B4 /* ThreadSafeMutableSet.m in Sources */,
 				7F54C2B21AC4625500CDD4B4 /* PRSlideCell.m in Sources */,

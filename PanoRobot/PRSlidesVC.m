@@ -1,9 +1,11 @@
 #import "PRSlidesVC.h"
 #import "PRSlideCell.h"
+#import "PRFadingView.h"
 
 @interface PRSlidesVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView * collectionView;
+@property (weak, nonatomic) IBOutlet PRFadingView * fadingView;
 
 @end
 
@@ -111,14 +113,33 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
     return ([_showingIndex.value integerValue] + 1) % [_imageListBuffer count];
 }
 
+- (UIImage *)currentImage {
+    UIGraphicsBeginImageContextWithOptions(_collectionView.bounds.size, NO, self.view.window.screen.scale);
+    [_collectionView drawViewHierarchyInRect:_collectionView.frame afterScreenUpdates:NO];
+    UIImage * snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snapshotImage;
+}
+
 - (void)switchSlideTick {
     if (!_showingIndex.value || !_imageListBuffer) {
         return;
     }
     
-//    float animationDuration = MIN(2.0f, _duration.value);
+    float animationDuration = MIN(2.0f, _duration.value);
+    
+    UIImage * currentImage = [self currentImage];
+    
+    _fadingView.imageView.image = currentImage;
+    _fadingView.alpha = 1.0f;
     
     [self scrollToItem:[self nextSlideIndex]];
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        _fadingView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+    }];
+    
 //    //fade in
 //    [UIView animateWithDuration:animationDuration animations:^{
 //        
