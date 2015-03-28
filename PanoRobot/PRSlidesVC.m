@@ -21,8 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     _collectionView.pagingEnabled = YES;
+    
+    UITapGestureRecognizer * tapGestureRecognizer =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)createTimer {
@@ -100,6 +103,17 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 
 #pragma mark - events
 
+- (void)tapped {
+    BOOL hidden = self.navigationController.navigationBarHidden;
+    
+    self.navigationController.navigationBarHidden = !hidden;
+    [UIApplication sharedApplication].statusBarHidden = !hidden;
+    
+    [_collectionView.collectionViewLayout invalidateLayout];
+    
+    [self reload];
+}
+
 - (void)timerTick {
     
     [self fullReload];
@@ -139,29 +153,6 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
         _fadingView.alpha = 0.0f;
     } completion:^(BOOL finished) {
     }];
-    
-//    //fade in
-//    [UIView animateWithDuration:animationDuration animations:^{
-//        
-//        [_collectionView setAlpha:0.0f];
-//        
-//    } completion:^(BOOL finished) {
-//        
-//        [self scrollToItem:[self nextSlideIndex]];
-//        
-//        //fade out
-//        [UIView animateWithDuration:animationDuration animations:^{
-//            
-//            [_collectionView setAlpha:1.0f];
-//            
-//        } completion:nil];
-//        
-//    }];
-    
-//    [UIView animateWithDuration:0.3 animations:^{
-//        [self scrollToItem:[self nextSlideIndex]];
-//    } completion:^(BOOL finished) {
-//    }];
 }
 
 #pragma mark - collection view data
