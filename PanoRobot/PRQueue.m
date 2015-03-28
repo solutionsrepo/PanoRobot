@@ -40,10 +40,10 @@ static NSArray * circularFilteredOrderedIndicies(NSInteger startIndex, NSInteger
         }
     };
     
-    for (int i = startIndex; i < size; ++i) {
+    for (NSInteger i = startIndex; i < size; ++i) {
         addIfNotExcluded(i);
     }
-    for (int i = 0; i < startIndex; ++i) {
+    for (NSInteger i = 0; i < startIndex; ++i) {
         addIfNotExcluded(i);
     }
     
