@@ -96,7 +96,7 @@ withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 }
 
 - (void)scrollToSelectedItem {
-    if (_showingIndex.value) {
+    if (_showingIndex.value && [_showingIndex.value integerValue] < [_imageListBuffer count]) {
         [self scrollToItem:[_showingIndex.value integerValue]];
     }
 }
