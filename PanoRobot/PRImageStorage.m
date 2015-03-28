@@ -20,7 +20,7 @@ RLM_ARRAY_TYPE(RLMImageCacheEntry)
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _lockQueue = dispatch_queue_create("ru.rtnews.ImageStorageLockQueue", nil);
+        _lockQueue = dispatch_queue_create("ru.panorobot.ImageStorageLockQueue", nil);
 //        _realm = [[self class] realm];
     }
     return self;
